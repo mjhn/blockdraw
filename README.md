@@ -9,6 +9,7 @@ Simple grid based drawing (bit like an icon editor). Simple interpretation of ge
 Implements
 Simple Undo/Redo
 Save/Edit documents to local storage.
+Using as few dependencies as possible.
 
 There are bugs.
 
