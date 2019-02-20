@@ -28,4 +28,4 @@ Node version 8 or above. (https://nodejs.org/en/)
 
 - From the repository root run - *npm start*
 
-The application will *should* start up and listen on http://localhost:3000
+The application will *should* start up and listen on http://localhost:8080
