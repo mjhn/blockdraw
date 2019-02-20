@@ -6,7 +6,8 @@ Simple grid based drawing (bit like an icon editor). Simple interpretation of ge
 *Right click* mouse to colour or erase a block.
 *Right click/drag* to color or erase blocks.
 
-Implements
+## Implements
+Create block drawing on 32x32 grid. 
 Simple Undo/Redo
 Save/Edit documents to local storage.
 Using as few dependencies as possible.
