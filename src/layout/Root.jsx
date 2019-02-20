@@ -41,7 +41,7 @@ export default class Root extends React.Component {
   }
 
   openDocument = function(document) {
-    console.log('open ', document);
+    // TODO maybe alternative Nav Link
   }
 
   /**

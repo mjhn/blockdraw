@@ -26,8 +26,6 @@ class SideNav extends React.Component {
   }
 
   render() {
-
-    console.log(this.props.location);
     
     return (
       <div style={{marginTop:26, marginLeft:20}}>

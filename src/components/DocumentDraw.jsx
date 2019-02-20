@@ -165,49 +165,46 @@ class DocumentDraw extends Component {
 
   buildGrid = () => {
 
-    console.log('DOCDATA', this.props.docData)
     let rows = [];
-    //if(this.props.document.name === null) {
-      for (var i = 0; i < this.props.documentSettings.height; i++){
-        let rowID = `row${i}`
-        let cell = []
-        for (var idx = 0; idx < this.props.documentSettings.width; idx++){
-          let cellID = `cell${i}-${idx}`
+    for (var i = 0; i < this.props.documentSettings.height; i++){
+      let rowID = `row${i}`
+      let cell = []
+      for (var idx = 0; idx < this.props.documentSettings.width; idx++){
+        let cellID = `cell${i}-${idx}`
 
-          let cellDefaults = {
-            lit: 'false',
-            class: ''
-          }
-          if(this.props.documentData) {
-            const cellData = this.props.documentData[cellID]
-            if(cellData) {
-              cellDefaults.lit = cellData.action.status;
-              cellDefaults.class = cellData.action.class;
-            }
-          }
-
-          cell.push(
-            <td 
-              key={cellID} 
-              id={cellID} 
-              style={{border:'1px solid #ccc'}}
-              onMouseEnter={this.handleChange}
-              onContextMenu={this.preventDefault}
-              onMouseDown={this.handleChange}
-              lit={cellDefaults.lit}
-              className={cellDefaults.class}
-              ref={(node) => {
-                if (node) {
-                  node.style.setProperty("width", "30px", "important");
-                  node.style.setProperty("height", "30px", "important");
-                }
-              }}
-            ></td>)
+        let cellDefaults = {
+          lit: 'false',
+          class: ''
         }
-        rows.push(<tr key={i} id={rowID}>{cell}</tr>)
-      }
+        if(this.props.documentData) {
+          const cellData = this.props.documentData[cellID]
+          if(cellData) {
+            cellDefaults.lit = cellData.action.status;
+            cellDefaults.class = cellData.action.class;
+          }
+        }
 
-    //}
+        cell.push(
+          <td 
+            key={cellID} 
+            id={cellID} 
+            style={{border:'1px solid #ccc'}}
+            onMouseEnter={this.handleChange}
+            onContextMenu={this.preventDefault}
+            onMouseDown={this.handleChange}
+            lit={cellDefaults.lit}
+            className={cellDefaults.class}
+            ref={(node) => {
+              if (node) {
+                node.style.setProperty("width", "30px", "important");
+                node.style.setProperty("height", "30px", "important");
+              }
+            }}
+          ></td>)
+      }
+      rows.push(<tr key={i} id={rowID}>{cell}</tr>)
+    }
+
     return rows;
   }
 
